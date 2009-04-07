@@ -1,0 +1,406 @@
+  [4;36;1mTestTable Columns (88.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-01400: cannot insert NULL into ("ORACLEBUILD_TEST"."TEST_TABLE"."NAME"): INSERT INTO TEST_TABLE (name, id) VALUES(NULL, 10000)[0m
+  [4;36;1mTestTable Columns (2.8ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.6ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id) VALUES('MyName', 10000)[0m
+  [4;36;1mTestTable Columns (2.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.7ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 10000, 'Claire')[0m
+  [4;36;1mTestTable Columns (3.3ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.5ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (5.8ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.2ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (26.4ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.6ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;35;1mTestTable Load (4.2ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mTestTable Columns (3.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (17.5ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.2ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;35;1mTestTable Load (6.2ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mTestTable Columns (3.3ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.6ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (5.1ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (3.1ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (9.7ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (25.7ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.1ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (295.3ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.0ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (6.5ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (37.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id, pet) VALUES('MyName', 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (5.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-01400: cannot insert NULL into ("ORACLEBUILD_TEST"."TEST_TABLE"."COLOR"): INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', NULL, 1, 'Claire')[0m
+  [4;36;1mTestTable Columns (3.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.6ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 2, 'Claire')[0m
+  [4;36;1mTestTable Columns (3.1ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (2.0ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 3, 'Claire')[0m
+  [4;36;1mTestTable Columns (5.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 4, 'Claire')[0m
+  [4;36;1mTestTable Columns (3.7ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.7ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 5, 'Claire')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.5ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 6, 'wombat')[0m
+  [4;36;1mTestTable Columns (57.5ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mTestTable Columns (2.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mTestTable Columns (3.3ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 1, 'Claire')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('MyName', 'black', 2, 'wombat')[0m
+  [4;36;1mTestTable Columns (45.1ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (1.3ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 3, 'cat')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 4, 'wombat')[0m
+  [4;36;1mTestTable Columns (3.4ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (1.0ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 5, 'cat')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 6, 'wombat')[0m
+  [4;36;1mTestTable Columns (28.5ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.9ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 7, 'cat')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 8, 'wombat')[0m
+  [4;36;1mTestTable Columns (5.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 1, 'cat')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 2, 'wombat')[0m
+  [4;36;1mTestTable Columns (6.4ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (3.0ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 1, 'cat')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 2, 'wombat')[0m
+  [4;36;1mTestTable Columns (2.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.9ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 3, 'cat')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color, id, pet) VALUES('Claire', 'black', 4, 'wombat')[0m
+  [4;36;1mTestTable Columns (5.6ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mTestTable Columns (3.6ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_TEST'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (4.0ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, color_id, id, pet) VALUES('Claire', 2.0, 1, 'cat')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (0.0ms)[0m   [0;1mOCIError: ORA-02290: check constraint (ORACLEBUILD_TEST.TEST_TABLE_CHK1) violated: INSERT INTO TEST_TABLE (name, color_id, id, pet) VALUES('Claire', 2.0, 2, 'wombat')[0m

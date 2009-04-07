@@ -1,0 +1,28 @@
+create sequence TEST_TABLE_SEQ;
+
+create table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null);
+
+  CREATE TABLE "COLORS" 
+   (	"ID" NUMBER NOT NULL ENABLE, 
+	"COLOR" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	 CONSTRAINT "COLORS_PK" PRIMARY KEY ("ID")
+   );
+
+  CREATE TABLE "TEST_TABLE" 
+   (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+   );
+
+INSERT INTO colors (id, color) VALUES (1, 'black');
+
+INSERT INTO colors (id,color) VALUES (2, 'brown');
+
+INSERT INTO colors (id, color) VALUES (3, 'white');
+
+INSERT INTO schema_migrations (version) VALUES ('0');

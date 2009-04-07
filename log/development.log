@@ -1,0 +1,1326 @@
+  [4;36;1mTestTable Columns (209.5ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mTestTable Columns (2.3ms)[0m   [0m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-02289: sequence does not exist: select TEST_TABLE_seq.nextval id from dual[0m
+  [4;35;1mSQL (68.8ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (14.7ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id) VALUES('George', NULL)[0m
+  [4;35;1mTestTable Load (4.9ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mTestTable Load (0.8ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mTestTable Load (13.6ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mTestTable Columns (8.0ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (8.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id) VALUES('George', NULL)[0m
+  [4;35;1mTestTable Load (0.0ms)[0m   [0mOCIError: ORA-00904: "TEST_TABLE"."Id": invalid identifier: SELECT * FROM TEST_TABLE WHERE (TEST_TABLE."Id" = 3) [0m
+  [4;36;1mTestTable Load (2.2ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mTestTable Update (0.0ms)[0m   [0mOCIError: ORA-00904: "Id": invalid identifier: UPDATE TEST_TABLE SET name = 'Fred' WHERE "Id" = NULL[0m
+  [4;36;1mTestTable Load (2.6ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT * FROM TEST_TABLE ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mTestTable Columns (12.7ms)[0m   [0m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mTestTable Update (10.9ms)[0m   [0;1mUPDATE TEST_TABLE SET name = 'Fred' WHERE id = 4[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (4.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id) VALUES('Simon', 5)[0m
+  [4;35;1mTestTable Load (3.0ms)[0m   [0mSELECT * FROM TEST_TABLE [0m
+  [4;36;1mTestTable Load (2.0ms)[0m   [0;1mSELECT * FROM TEST_TABLE [0m
+  [4;35;1mTestTable Load (4.5ms)[0m   [0mSELECT * FROM TEST_TABLE WHERE (TEST_TABLE.id = 6) [0m
+  [4;36;1mTestTable Update (1.7ms)[0m   [0;1mUPDATE TEST_TABLE SET name = 'Bill' WHERE id = 6[0m
+  [4;35;1mTestTable Load (0.9ms)[0m   [0mSELECT * FROM TEST_TABLE [0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;35;1mTestTable Create (1.6ms)[0m   [0mINSERT INTO TEST_TABLE (name, id) VALUES('Mark', 7)[0m
+  [4;36;1mTestTable Load (1.8ms)[0m   [0;1mSELECT * FROM TEST_TABLE [0m
+  [4;35;1mSQL (2.2ms)[0m   [0mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;36;1mTestTable Create (13.8ms)[0m   [0;1mINSERT INTO TEST_TABLE (name, id) VALUES('Mary', 9)[0m
+  [4;35;1mTestTable Load (2.0ms)[0m   [0mSELECT * FROM TEST_TABLE [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect TEST_TABLE_seq.nextval id from dual[0m
+  [4;35;1mTestTable Create (0.8ms)[0m   [0mINSERT INTO TEST_TABLE (name, id) VALUES('Phil', 10)[0m
+  [4;36;1mTestTable Load (2.0ms)[0m   [0;1mSELECT * FROM TEST_TABLE [0m
+  [4;36;1mSQL (139.2ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mPrimary Key (292.8ms)[0m   [0m select cc.column_name
+ from user_constraints c, user_cons_columns cc
+ where c.owner = 'RUBYTESTER'
+ and c.table_name = 'TEST_TABLE'
+ and c.constraint_type = 'P'
+ and cc.owner = c.owner
+ and cc.constraint_name = c.constraint_name
+[0m
+  [4;36;1mSQL (278.7ms)[0m   [0;1m SELECT lower(i.index_name) as index_name, i.uniqueness, lower(c.column_name) as column_name
+ FROM all_indexes i, all_ind_columns c
+ WHERE i.table_name = 'TEST_TABLE'
+ AND i.owner = 'RUBYTESTER'
+ AND i.table_owner = 'RUBYTESTER'
+ AND c.index_name = i.index_name
+ AND c.index_owner = i.owner
+ AND NOT EXISTS (SELECT uc.index_name FROM all_constraints uc WHERE uc.index_name = i.index_name AND uc.owner = i.owner AND uc.constraint_type = 'P')
+ ORDER BY i.index_name, c.column_position
+[0m
+  [4;36;1mSQL (40.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (56.3ms)[0m   [0mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;35;1mSQL (27.8ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (29.1ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (28.7ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (37.9ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (26.7ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBYTESTER'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;35;1mPrimary Key (4.3ms)[0m   [0m select cc.column_name
+ from user_constraints c, user_cons_columns cc
+ where c.owner = 'RUBYTESTER'
+ and c.table_name = 'TEST_TABLE'
+ and c.constraint_type = 'P'
+ and cc.owner = c.owner
+ and cc.constraint_name = c.constraint_name
+[0m
+  [4;36;1mSQL (16.6ms)[0m   [0;1m SELECT lower(i.index_name) as index_name, i.uniqueness, lower(c.column_name) as column_name
+ FROM all_indexes i, all_ind_columns c
+ WHERE i.table_name = 'TEST_TABLE'
+ AND i.owner = 'RUBYTESTER'
+ AND i.table_owner = 'RUBYTESTER'
+ AND c.index_name = i.index_name
+ AND c.index_owner = i.owner
+ AND NOT EXISTS (SELECT uc.index_name FROM all_constraints uc WHERE uc.index_name = i.index_name AND uc.owner = i.owner AND uc.constraint_type = 'P')
+ ORDER BY i.index_name, c.column_position
+[0m
+  [4;36;1mSQL (40.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (24.6ms)[0m   [0mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL) [0m
+  [4;36;1mSQL (8.4ms)[0m   [0;1mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (11.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (43.5ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (62.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (39.4ms)[0m   [0mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL) [0m
+  [4;36;1mSQL (9.6ms)[0m   [0;1mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;35;1mSQL (44.1ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (22.1ms)[0m   [0;1mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;35;1mSQL (21.0ms)[0m   [0mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;36;1mSQL (43.3ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (122.0ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (75.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (338.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (32.4ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (93.6ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (54.5ms)[0m   [0;1mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL) [0m
+  [4;35;1mSQL (37.9ms)[0m   [0mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;36;1mSQL (62.3ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (15.1ms)[0m   [0mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;35;1mSQL (28.1ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (39.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (39.5ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.9ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (20.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (35.6ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (34.9ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;35;1mSQL (71.5ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (44.9ms)[0m   [0;1mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL) [0m
+  [4;35;1mSQL (5.6ms)[0m   [0mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;36;1mSQL (34.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (16.9ms)[0m   [0mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;36;1mSQL (14.1ms)[0m   [0;1mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;35;1mSQL (32.2ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (38.6ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.8ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (30.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (51.7ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (106.9ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;35;1mSQL (61.5ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (49.1ms)[0m   [0;1mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL) [0m
+  [4;35;1mSQL (319.3ms)[0m   [0mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;36;1mSQL (35.8ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;35;1mSQL (34.5ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (37.3ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (44.8ms)[0m   [0m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_DEV'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mPrimary Key (284.6ms)[0m   [0;1m select cc.column_name
+ from user_constraints c, user_cons_columns cc
+ where c.owner = 'ORACLEBUILD_DEV'
+ and c.table_name = 'TEST_TABLE'
+ and c.constraint_type = 'P'
+ and cc.owner = c.owner
+ and cc.constraint_name = c.constraint_name
+[0m
+  [4;35;1mSQL (278.9ms)[0m   [0m SELECT lower(i.index_name) as index_name, i.uniqueness, lower(c.column_name) as column_name
+ FROM all_indexes i, all_ind_columns c
+ WHERE i.table_name = 'TEST_TABLE'
+ AND i.owner = 'ORACLEBUILD_DEV'
+ AND i.table_owner = 'ORACLEBUILD_DEV'
+ AND c.index_name = i.index_name
+ AND c.index_owner = i.owner
+ AND NOT EXISTS (SELECT uc.index_name FROM all_constraints uc WHERE uc.index_name = i.index_name AND uc.owner = i.owner AND uc.constraint_type = 'P')
+ ORDER BY i.index_name, c.column_position
+[0m
+  [4;36;1mSQL (138.1ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (49.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (54.8ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (32.1ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;35;1mSQL (36.5ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (30.8ms)[0m   [0;1mCREATE TABLE test_table (id NUMBER(38) NOT NULL PRIMARY KEY, name VARCHAR2(20) NOT NULL, pet VARCHAR2(20)) [0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE SEQUENCE test_table_seq START WITH 10000[0m
+  [4;36;1mSQL (27.4ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (25.1ms)[0m   [0mCREATE TABLE schema_migrations (version VARCHAR2(255) NOT NULL) [0m
+  [4;36;1mSQL (22.3ms)[0m   [0;1mCREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations (version)[0m
+  [4;35;1mSQL (27.9ms)[0m   [0mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (40.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (55.0ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (30.0ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (38.9ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (20.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (54.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (42.2ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (42.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.5ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (60.9ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (21.3ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (18.3ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (5.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (38.3ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (37.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (61.8ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (25.2ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (51.4ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (39.1ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (59.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (25.5ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (37.9ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (36.8ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (54.1ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (23.6ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (35.8ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (15.4ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (18.3ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (39.8ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.8ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (63.7ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (42.6ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (33.8ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (7.1ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (34.3ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (290.0ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (41.1ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (57.9ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (2.4ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (45.0ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (17.1ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (13.9ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (135.0ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (41.2ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (27.9ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'ORACLEBUILD_DEV'
+ and table_name = 'TEST_TABLE'
+ order by column_id
+[0m
+  [4;36;1mPrimary Key (1.0ms)[0m   [0;1m select cc.column_name
+ from user_constraints c, user_cons_columns cc
+ where c.owner = 'ORACLEBUILD_DEV'
+ and c.table_name = 'TEST_TABLE'
+ and c.constraint_type = 'P'
+ and cc.owner = c.owner
+ and cc.constraint_name = c.constraint_name
+[0m
+  [4;35;1mSQL (17.2ms)[0m   [0m SELECT lower(i.index_name) as index_name, i.uniqueness, lower(c.column_name) as column_name
+ FROM all_indexes i, all_ind_columns c
+ WHERE i.table_name = 'TEST_TABLE'
+ AND i.owner = 'ORACLEBUILD_DEV'
+ AND i.table_owner = 'ORACLEBUILD_DEV'
+ AND c.index_name = i.index_name
+ AND c.index_owner = i.owner
+ AND NOT EXISTS (SELECT uc.index_name FROM all_constraints uc WHERE uc.index_name = i.index_name AND uc.owner = i.owner AND uc.constraint_type = 'P')
+ ORDER BY i.index_name, c.column_position
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (41.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.6ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (39.1ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (38.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (37.9ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (15.9ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (49.5ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (35.5ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (9.9ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (47.4ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (100.2ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (9.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (39.9ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (37.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.5ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (62.6ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (34.7ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (33.8ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (16.8ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (96.5ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (1362.6ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (29.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (63.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (126.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (138.1ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (67.7ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (15.9ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (123.3ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (1497.4ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (500.1ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (70.9ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (52.7ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (591.6ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (786.3ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (37.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (46.1ms)[0m   [0;1mselect lower(table_name) name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.7ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (73.0ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (54.8ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (39.8ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (47.4ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (296.2ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (20.3ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (34.4ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (54.1ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.1ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (8.9ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (60.9ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (139.8ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-00911: invalid character: INSERT INTO schema_migrations (version) VALUES ('0');[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (44.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (19.3ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (37.6ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (42.4ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (17.1ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (19.4ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (174.5ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: INSERT INTO schema_migrations (version) VALUES ('0');
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.2ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (32.3ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (57.8ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (16.9ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (95.5ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (235.5ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (28.3ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (38.9ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (21.2ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (9.4ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (344.1ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00900: invalid SQL statement: 
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (38.7ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (42.4ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (46.6ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (17.2ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (159.3ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-00911: invalid character: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20));
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.5ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (47.0ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (226.4ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20));[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (44.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (53.9ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (39.6ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (45.3ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20));
+ 
+ [0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.2ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (35.4ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (35.3ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (217.5ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20));
+ 
+[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'SCHEMA_MIGRATIONS'
+ order by column_id
+ [0m
+  [4;35;1mSQL (1.9ms)[0m   [0m
+ select column_name, data_type, data_length, char_used, char_length, data_precision, data_scale, data_default, nullable
+ from user_tab_columns
+ where table_name = 'TEST_TABLE'
+ order by column_id
+ [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mselect sequence_name from user_sequences[0m
+  [4;36;1mSQL (47.1ms)[0m   [0;1mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;35;1mSQL (24.4ms)[0m   [0mdrop sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (28.2ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (13.1ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (32.9ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (279.2ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (47.1ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (26.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (39.5ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (22.8ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (25.4ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (139.7ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: INSERT INTO schema_migrations (version) VALUES ('0');[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (47.1ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (47.8ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (19.4ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (20.3ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (233.3ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (39.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (41.0ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (22.4ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (21.8ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (166.2ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (34.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (141.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (67.4ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (27.8ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-00911: invalid character: create table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null);
+INSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (40.9ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null);
+ 
+INSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (42.9ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (21.6ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null);
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.4ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (15.9ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: create table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null);
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (22.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (15.2ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (66.5ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (40.5ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (7.1ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-00955: name is already used by an existing object: create sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (41.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (23.4ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (62.5ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: CREATE TABLE "ORACLEBUILD_DEV"."TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	 PRIMARY KEY ("ID")
+ USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+ STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+ PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+ TABLESPACE "USERS" ENABLE, 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+ STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+ PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+ TABLESPACE "USERS" ;
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (42.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (16.6ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (41.0ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00911: invalid character: CREATE TABLE "ORACLEBUILD_DEV"."TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	 PRIMARY KEY ("ID")
+ USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+ STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+ PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+ TABLESPACE "USERS" ENABLE, 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+ STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+ PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT)
+ TABLESPACE "USERS" ;
+[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (47.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (16.6ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (22.8ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (7.6ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (78.4ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (9.6ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20))[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (42.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (64.3ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (10.4ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (57.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (29.5ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (62.3ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;36;1mSQL (2.9ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (41.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (34.3ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (18.6ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (67.9ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (17.7ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (41.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.6ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (20.2ms)[0m   [0mdrop table EXTRA_TABLE cascade constraints[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (134.9ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.2ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (69.7ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (26.6ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (16.7ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (177.9ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (42.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (17.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (33.6ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (32.3ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (7.6ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (14.6ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (186.2ms)[0m   [0mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;36;1mSQL (22.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (41.1ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (16.7ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (34.6ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (61.0ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (33.9ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-00907: missing right parenthesis: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABuLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.8ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (16.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (23.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.5ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (89.0ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (14.3ms)[0m   [0;1mcreate table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (20.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (36.9ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (16.7ms)[0m   [0;1mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mcreate sequence TEST_TABLE_SEQ[0m
+  [4;36;1mSQL (104.8ms)[0m   [0;1mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mOCIError: ORA-02251: subquery not allowed here: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ CONSTRAINT "TEST_TABLE_CHK2" CHECK ("COLOR" in (SELECT color FROM colors)) ENABLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (44.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (25.6ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-02251: subquery not allowed here: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ CONSTRAINT "TEST_TABLE_CHK2" CHECK ("COLOR" in (SELECT color FROM colors)) ENABLE
+ )[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (69.0ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-02251: subquery not allowed here: create table TEST_TABLE (
+ id number(38,0) not null,
+ name varchar2(20) not null,
+ color varchar2(20) not null,
+ pet varchar2(20)
+ 
+ CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ CONSTRAINT "TEST_TABLE_CHK2" CHECK ("COLOR" in (SELECT color FROM colors)) ENABLE
+ )[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (47.6ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.9ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (17.8ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00907: missing right parenthesis: 
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "ORACLEBUILD_DEV"."COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (46.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (18.9ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (45.9ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (68.4ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00907: missing right parenthesis: 
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "ORACLEBUILD_DEV"."COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (46.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (18.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00907: missing right parenthesis: 
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (25.3ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (7.8ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (94.1ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (83.3ms)[0m   [0;1m
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+ )[0m
+  [4;35;1mSQL (88.7ms)[0m   [0m CREATE TABLE "COLORS" 
+ (	"ID" NUMBER NOT NULL ENABLE, 
+	"COLOR" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	 CONSTRAINT "COLORS_PK" PRIMARY KEY ("ID")
+ )[0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (1, 'black')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO colors (id,color) VALUES (2, 'brown')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (3, 'white')[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.9ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (19.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (39.9ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mdrop table COLORS cascade constraints[0m
+  [4;35;1mSQL (15.3ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (16.3ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00907: missing right parenthesis: 
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (44.5ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (20.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (25.7ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (69.9ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00942: table or view does not exist: 
+ CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID"),
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (21.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (45.4ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (20.1ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00907: missing right parenthesis: CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID")
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')
+) ENABLE, 
+ )[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (64.1ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (42.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (156.9ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00904: : invalid identifier: CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')
+) ENABLE, 
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (43.7ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (23.8ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (53.1ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (16.4ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (19.9ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (111.7ms)[0m   [0;1m CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')
+) ENABLE 
+ )[0m
+  [4;35;1mSQL (114.7ms)[0m   [0m CREATE TABLE "COLORS" 
+ (	"ID" NUMBER NOT NULL ENABLE, 
+	"COLOR" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	 CONSTRAINT "COLORS_PK" PRIMARY KEY ("ID")
+ )[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (1, 'black')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO colors (id,color) VALUES (2, 'brown')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (3, 'white')[0m
+  [4;35;1mSQL (40.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.5ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (33.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (36.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (38.8ms)[0m   [0;1mdrop table COLORS cascade constraints[0m
+  [4;35;1mSQL (51.5ms)[0m   [0mdrop table TEST_TABLE cascade constraints[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (194.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00942: table or view does not exist: CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "ORACLEBUILD_DEV"."COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (44.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (22.7ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (29.5ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (19.5ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (324.3ms)[0m   [0;1m CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE
+ )[0m
+  [4;35;1mSQL (261.8ms)[0m   [0m CREATE TABLE "COLORS" 
+ (	"ID" NUMBER NOT NULL ENABLE, 
+	"COLOR" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	 CONSTRAINT "COLORS_PK" PRIMARY KEY ("ID")
+ )[0m
+  [4;36;1mSQL (54.0ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (1, 'black')[0m
+  [4;35;1mSQL (12.0ms)[0m   [0mINSERT INTO colors (id,color) VALUES (2, 'brown')[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (3, 'white')[0m
+  [4;35;1mSQL (56.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (45.3ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (57.1ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (32.4ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (104.3ms)[0m   [0;1mdrop table TEST_TABLE cascade constraints[0m
+  [4;35;1mSQL (61.4ms)[0m   [0mdrop table COLORS cascade constraints[0m
+  [4;36;1mSQL (22.6ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (229.2ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mOCIError: ORA-00942: table or view does not exist: CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mselect sequence_name from user_sequences[0m
+  [4;35;1mSQL (46.4ms)[0m   [0mselect table_name from all_tables where owner = sys_context('userenv','session_user')[0m
+  [4;36;1mSQL (26.5ms)[0m   [0;1mdrop sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (30.2ms)[0m   [0mdrop table SCHEMA_MIGRATIONS cascade constraints[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mcreate sequence TEST_TABLE_SEQ[0m
+  [4;35;1mSQL (23.9ms)[0m   [0mcreate table SCHEMA_MIGRATIONS (
+ version varchar2(255) not null)[0m
+  [4;36;1mSQL (260.0ms)[0m   [0;1m CREATE TABLE "COLORS" 
+ (	"ID" NUMBER NOT NULL ENABLE, 
+	"COLOR" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	 CONSTRAINT "COLORS_PK" PRIMARY KEY ("ID")
+ )[0m
+  [4;35;1mSQL (388.2ms)[0m   [0m CREATE TABLE "TEST_TABLE" 
+ (	"ID" NUMBER(38,0) NOT NULL ENABLE, 
+	"NAME" VARCHAR2(20 BYTE) NOT NULL ENABLE, 
+	"PET" VARCHAR2(20 BYTE), 
+	"COLOR_ID" NUMBER, 
+	 PRIMARY KEY ("ID") USING INDEX ENABLE, 
+	 CONSTRAINT "TEST_TABLE_CHK1" CHECK ("PET" in ('cat', 'dog', 'badger', 'bunny')) ENABLE, 
+	 CONSTRAINT "TEST_TABLE_COLORS_FK1" FOREIGN KEY ("COLOR_ID") REFERENCES "COLORS" ("ID") ENABLE
+ )[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (1, 'black')[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mINSERT INTO colors (id,color) VALUES (2, 'brown')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO colors (id, color) VALUES (3, 'white')[0m
+  [4;35;1mSQL (19.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('0')[0m

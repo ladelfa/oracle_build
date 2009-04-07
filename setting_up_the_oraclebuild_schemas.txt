@@ -1,0 +1,14 @@
+Setting up oraclebuild 
+
+With sqlplus, or other interface, logged in as SYS, execute:
+
+	create tablespace oraclebuild datafile '/oracle/oradata/orcl/oraclebuild.dbf'
+	  size 500k 
+	  autoextend on;
+
+	GRANT CONNECT, RESOURCE TO oraclebuild_dev IDENTIFIED BY oracle;
+	ALTER USER oraclebuild_dev DEFAULT TABLESPACE oraclebuild TEMPORARY TABLESPACE temp;
+
+	GRANT CONNECT, RESOURCE TO oraclebuild_test IDENTIFIED BY oracle;
+	ALTER USER oraclebuild_test DEFAULT TABLESPACE oraclebuild TEMPORARY TABLESPACE temp;
+

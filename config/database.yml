@@ -1,0 +1,11 @@
+development:
+  adapter: oracle_enhanced
+  database: 127.0.0.1/ORCL
+  username: oraclebuild_dev
+  password: oracle
+  
+test:
+  adapter: oracle_enhanced
+  database: 127.0.0.1/ORCL
+  username: oraclebuild_test
+  password: oracle 
